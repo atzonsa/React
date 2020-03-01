@@ -7,14 +7,7 @@ import productData from "./productData";
 
 export default function App() {
   const components = productData.map(productData => {
-    return (
-      <Product
-        id={productData.id}
-        name={productData.name}
-        price={productData.price}
-        description={productData.description}
-      />
-    );
+    return <Product id={productData.id} product={productData} />;
   });
 
   return <div>{components}</div>;
