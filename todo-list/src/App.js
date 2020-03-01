@@ -14,7 +14,7 @@ export default class App extends React.Component {
 
   render() {
     const components = this.state.todos.map(todoData => {
-      return <ToDoItem id={todoData.id} item={todoData} />;
+      return <ToDoItem key={todoData.id} item={todoData} />;
     });
 
     return <div className="todo-list">{components}</div>;
