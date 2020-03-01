@@ -4,10 +4,19 @@ import "./styles.css";
 import ToDoItem from "./ToDoItem";
 import todoData from "./todoData";
 
-export default function App() {
-  const components = todoData.map(todoData => {
-    return <ToDoItem id={todoData.id} item={todoData} />;
-  });
+export default class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      todos: todoData
+    };
+  }
 
-  return <div className="todo-list">{components}</div>;
+  render() {
+    const components = this.state.todos.map(todoData => {
+      return <ToDoItem id={todoData.id} item={todoData} />;
+    });
+
+    return <div className="todo-list">{components}</div>;
+  }
 }
