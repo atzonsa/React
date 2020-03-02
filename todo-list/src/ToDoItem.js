@@ -1,6 +1,14 @@
 import React from "react";
 
 function ToDoItem(props) {
+  const styles = props.item.done
+    ? {
+        fontStyle: "Italic",
+        textDecoration: "line-through",
+        color: "lightgrey"
+      }
+    : {};
+
   return (
     <div className="todo-item">
       <input
@@ -8,7 +16,7 @@ function ToDoItem(props) {
         type="checkbox"
         checked={props.item.done}
       />
-      <p>{props.item.message}</p>
+      <p style={styles}>{props.item.message}</p>
     </div>
   );
 }
